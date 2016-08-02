@@ -5,6 +5,7 @@
   "plugins": ["flow-vars"],
   "rules": {
     "flow-vars/define-flow-type": 1,
-    "flow-vars/use-flow-type": 1
+    "flow-vars/use-flow-type": 1,
+    "space-before-function-paren": ["error", { "anonymous": "always", "named": "never" }]
   }
 }
