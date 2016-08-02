@@ -19,7 +19,6 @@ new Vue({
   },
   methods: {
     play() {
-      console.log('asd')
       this.$audio.play()
     },
     pause() {
@@ -33,6 +32,9 @@ new Vue({
     },
     playPrev() {
       this.$audio.playPrev()
+    },
+    playAll() {
+      this.$audio.playAll()
     }
   }
 })
