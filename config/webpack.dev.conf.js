@@ -30,6 +30,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Vue-audio demo',
       filename: './example/index.html',
+      template: './src/template.html',
       cache: false
     }),
     new webpack.HotModuleReplacementPlugin()
