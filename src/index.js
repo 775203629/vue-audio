@@ -1,5 +1,7 @@
 // @flow
-import { warn } from './util'
+import {
+  warn
+} from './util'
 
 const plugin = {
   install(Vue) {
@@ -10,7 +12,7 @@ const plugin = {
       isPlayingAll: false,
       sources: [],
       // 初始化
-      init(config: object, sources) {
+      init(config: Object, sources: array) {
         // create element
         this._createAudio(config)
         this._addEventHandler()
@@ -61,7 +63,7 @@ const plugin = {
         this.audio.pause()
       },
       // 继续播放
-      keep() {
+      resume() {
         this.audio.play()
       },
       // 播放上一曲

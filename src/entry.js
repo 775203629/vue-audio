@@ -24,8 +24,8 @@ new Vue({
     pause() {
       this.$audio.pause()
     },
-    keep() {
-      this.$audio.keep()
+    resume() {
+      this.$audio.resume()
     },
     playNext() {
       this.$audio.playNext()
