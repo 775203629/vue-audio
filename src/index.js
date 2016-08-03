@@ -3,8 +3,8 @@ import {
   warn
 } from './util'
 
-const plugin = {
-  install(Vue) {
+const plugin: Object = {
+  install(Vue: Object): void {
     Vue.prototype.$audio = {
       audio: null,
       index: 0,
@@ -12,17 +12,17 @@ const plugin = {
       isPlayingAll: false,
       sources: [],
       // 初始化
-      init(config: Object, sources: array) {
+      init(config: Object, sources: Array<string>): void {
         // create element
         this._createAudio(config)
         this._addEventHandler()
         this.sources = sources
       },
       // 创建audio标签
-      _createAudio(config) {
+      _createAudio(config: Object): void {
         const audioElement = document.createElement('audio')
-        // set config
-        for (const [key, value] of Object.entries(config)) {
+          // set config
+        for (const [key: string, value] of Object.entries(config)) {
           if ((value !== undefined) && (value !== false)) {
             audioElement.setAttribute(key, value)
           }
@@ -31,7 +31,7 @@ const plugin = {
         document.body.appendChild(audioElement)
       },
       // 添加事件监听
-      _addEventHandler() {
+      _addEventHandler(): void {
         this.audio.addEventListener('play', () => {
           warn('play')
         }, false)
@@ -59,32 +59,32 @@ const plugin = {
         this.audio.play()
       },
       // 暂停
-      pause() {
+      pause(): void {
         this.audio.pause()
       },
       // 继续播放
-      resume() {
+      resume(): void {
         this.audio.play()
       },
       // 播放上一曲
-      playPrev() {
+      playPrev(): void {
         this.play(this.index - 1)
       },
       // 播放下一曲
-      playNext() {
+      playNext(): void {
         this.play(this.index + 1)
       },
       // 播放全部
-      playAll() {
+      playAll(): void {
         this.play()
         this.isPlayingAll = true
       },
       // 歌曲开始播放时的回调
-      start() {
+      start(): void {
 
       },
       // 歌曲结束时的回调
-      end() {
+      end(): void {
         // if (this.) {}
       }
       // 歌曲播放时间的回调
